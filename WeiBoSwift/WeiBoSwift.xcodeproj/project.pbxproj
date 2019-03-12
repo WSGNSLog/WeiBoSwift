@@ -24,6 +24,7 @@
 		1B92CDB3223562F0005B438F /* PopoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B92CDB1223562F0005B438F /* PopoverController.swift */; };
 		1B92CDB4223562F0005B438F /* PopoverController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B92CDB2223562F0005B438F /* PopoverController.xib */; };
 		1B92CDB62235F666005B438F /* MyPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B92CDB52235F666005B438F /* MyPresentationController.swift */; };
+		1B92CDBA22376595005B438F /* PopoverAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B92CDB922376595005B438F /* PopoverAnimator.swift */; };
 		1B93844822333D5A000FDA4F /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B93844722333D5A000FDA4F /* BaseController.swift */; };
 		1B93844A22334001000FDA4F /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B93844922334001000FDA4F /* VisitorView.swift */; };
 		1B93844C2233400C000FDA4F /* VisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B93844B2233400C000FDA4F /* VisitorView.xib */; };
@@ -52,6 +53,7 @@
 		1B92CDB1223562F0005B438F /* PopoverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverController.swift; sourceTree = "<group>"; };
 		1B92CDB2223562F0005B438F /* PopoverController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopoverController.xib; sourceTree = "<group>"; };
 		1B92CDB52235F666005B438F /* MyPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPresentationController.swift; sourceTree = "<group>"; };
+		1B92CDB922376595005B438F /* PopoverAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverAnimator.swift; sourceTree = "<group>"; };
 		1B93844722333D5A000FDA4F /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		1B93844922334001000FDA4F /* VisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		1B93844B2233400C000FDA4F /* VisitorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VisitorView.xib; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				1B92CDB1223562F0005B438F /* PopoverController.swift */,
 				1B92CDB2223562F0005B438F /* PopoverController.xib */,
 				1B92CDB52235F666005B438F /* MyPresentationController.swift */,
+				1B92CDB922376595005B438F /* PopoverAnimator.swift */,
 			);
 			path = UIPopover;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				1B92CDAF22356050005B438F /* TitleButton.swift in Sources */,
 				1B93844822333D5A000FDA4F /* BaseController.swift in Sources */,
 				1B5C8CA6222EC42B0042F017 /* MessageController.swift in Sources */,
+				1B92CDBA22376595005B438F /* PopoverAnimator.swift in Sources */,
 				1B5C8CA8222EC4370042F017 /* DiscorverController.swift in Sources */,
 				1B5C8C8B222EAAB60042F017 /* AppDelegate.swift in Sources */,
 				1B5C8C9E222EC1980042F017 /* MainTabBarController.swift in Sources */,

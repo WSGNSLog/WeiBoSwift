@@ -11,12 +11,16 @@ import UIKit
 class HomeController: BaseController {
 
     private lazy var titleBtn : TitleButton = TitleButton()
+    
+    fileprivate lazy var popoverAnimator :PopoverAnimator = PopoverAnimator{[unowned self](dismissFinished) in
+        self.titleBtn.isSelected = dismissFinished
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
         visitorView.addRotateionAnimation()
         if !isLogin {
-            return
+            //return
         }
         
         setupNavigationBar()
@@ -41,7 +45,7 @@ extension HomeController{
         let popoverVC = PopoverController()
         popoverVC.modalPresentationStyle = .custom
         
-        popoverVC.transitioningDelegate = self
+        popoverVC.transitioningDelegate = popoverAnimator
         
         present(popoverVC, animated: true, completion: nil)
     }
