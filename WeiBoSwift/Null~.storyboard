@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q4f-NA-89A">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main Tab Bar Controller-->
+        <scene sceneID="m11-ez-fCi">
+            <objects>
+                <tabBarController id="q4f-NA-89A" customClass="MainTabBarController" customModule="WeiBoSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="F2o-if-Fzf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="gbc-QZ-PkQ" kind="relationship" relationship="viewControllers" id="aIZ-jC-hx9"/>
+                        <segue destination="rxk-5J-cwQ" kind="relationship" relationship="viewControllers" id="jU9-rN-NWN"/>
+                        <segue destination="lD2-aO-Jay" kind="relationship" relationship="viewControllers" id="QZ3-kz-hrp"/>
+                        <segue destination="cgY-ng-qoz" kind="relationship" relationship="viewControllers" id="P0B-de-OXx"/>
+                        <segue destination="ir8-pi-Sd1" kind="relationship" relationship="viewControllers" id="7yL-aD-U0z"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xVD-37-HCj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1881" y="-396"/>
+        </scene>
+        <!--Message-->
+        <scene sceneID="5XS-pW-BtW">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Message" id="gbc-QZ-PkQ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="消息" image="tabbar_message_center" selectedImage="tabbar_message_center_highlighted" id="Trs-J9-Ifh"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="swl-2M-cRm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-549" y="-484"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="NMQ-df-cAV">
+            <objects>
+                <viewController id="ir8-pi-Sd1" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SFc-Lq-V1J">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="a4G-jI-q25"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="Ewg-11-7gl"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HJD-co-9nd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-508" y="-395"/>
+        </scene>
+        <!--Discover-->
+        <scene sceneID="3ih-Ya-Lp9">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Discover" id="rxk-5J-cwQ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="发现" image="tabbar_discover" selectedImage="tabbar_discover_highlighted" id="mSi-u1-JI7"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g1g-Bo-QUt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-548" y="-251"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="xQE-F6-qh9">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" id="lD2-aO-Jay" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="tabbar_profile" selectedImage="tabbar_profile_highlighted" id="IRk-hG-bPW"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aXK-o7-BuS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-499" y="-63"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="BTN-pU-QFe">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" id="cgY-ng-qoz" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="HD4-s7-yZd"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WOe-9f-Km7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-997" y="-855"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="tabbar_discover" width="30" height="30"/>
+        <image name="tabbar_discover_highlighted" width="30" height="30"/>
+        <image name="tabbar_message_center" width="30" height="30"/>
+        <image name="tabbar_message_center_highlighted" width="30" height="30"/>
+        <image name="tabbar_profile" width="30" height="30"/>
+        <image name="tabbar_profile_highlighted" width="30" height="30"/>
+    </resources>
+</document>
