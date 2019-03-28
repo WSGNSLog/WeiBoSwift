@@ -182,6 +182,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                     <constraints>
                                         <constraint firstItem="bQ9-Il-QG4" firstAttribute="top" secondItem="GtI-nU-aUf" secondAttribute="top" constant="15" id="5RT-rn-vtd"/>
                                         <constraint firstItem="jy2-TT-Kcq" firstAttribute="width" secondItem="6Gu-Uf-gJ4" secondAttribute="width" id="6KY-Rw-DTP"/>

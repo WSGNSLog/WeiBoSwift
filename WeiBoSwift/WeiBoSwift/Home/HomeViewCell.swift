@@ -56,7 +56,7 @@ class HomeViewCell: UITableViewCell {
                     self.layoutIfNeeded()
                     
                     //2.计算并保存cell高度
-                    viewModel.cellHeight = self.bottomToolBarView.frame.maxX
+                    viewModel.cellHeight = self.bottomToolBarView.frame.maxY
                 }
                 
                 // MARK: - RELabel监听点击
