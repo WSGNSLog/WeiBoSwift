@@ -18,7 +18,7 @@ class PhotoBrowserViewCell: UICollectionViewCell {
     
     var picUrl : URL?{
         didSet{
-            setupContent(picUrl: picUrl)
+            setupContent(picURL: picUrl)
         }
     }
     
@@ -47,7 +47,7 @@ extension PhotoBrowserViewCell{
     fileprivate func setupUI(){
         contentView.addSubview(scrollView)
         contentView.addSubview(progressView)
-        contentView.addSubview(imageView)
+        scrollView.addSubview(imageView)
         
         scrollView.frame = contentView.bounds
         scrollView.frame.size.width -= 20
@@ -73,14 +73,14 @@ extension PhotoBrowserViewCell{
 }
 
 extension PhotoBrowserViewCell {
-    fileprivate func setupContent(picUrl : URL?){
+    fileprivate func setupContent(picURL : URL?){
         //nil值校验
-        guard let picUrl = picUrl else {
+        guard let picURL = picURL else {
             return
         }
         
         //取出image对象
-        let  image = SDWebImageManager.shared().imageCache?.imageFromDiskCache(forKey: picUrl.absoluteString)
+        let  image = SDWebImageManager.shared().imageCache?.imageFromDiskCache(forKey: picURL.absoluteString)
         //计算imageView的frame
         let width = UIScreen.main.bounds.width
         let height = width / (image?.size.width)! * (image?.size.height)!
@@ -95,7 +95,7 @@ extension PhotoBrowserViewCell {
         
         //设置imageView的图片
         progressView.isHidden = false
-        imageView.sd_setImage(with: getBigUrl(picUrl), placeholderImage: image, options: [], progress: { (current, total, _) in
+        imageView.sd_setImage(with: getBigUrl(picUrl!), placeholderImage: image, options: [], progress: { (current, total, _) in
             self.progressView.progress = CGFloat(current) / CGFloat(total)
         }) { (_, _, _, _) in
             self.progressView.isHidden = true
