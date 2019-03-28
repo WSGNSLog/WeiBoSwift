@@ -7,6 +7,15 @@
 //  Copyright © 2019 Wu. All rights reserved.
 //
 
+
+import UIKit
+
+/// 点击类型
+///
+/// - None: 默认，无类型
+/// - User: 用户： @xiaoyouPrince：
+/// - Topic: 话题： #羊毛卷#
+/// - Link: 连接: http://xiaoyouprince.com
 enum TapHandlerType {
     case NoneTapHandler
     case UserTapHandler
@@ -14,16 +23,16 @@ enum TapHandlerType {
     case LinkTapHandler
 }
 
-import UIKit
 
 class RELabel: UILabel {
-
+    
+    // MARK: - 重写系统属性
     override var text: String?{
         didSet{
             prepareText()
         }
     }
-
+    
     override var attributedText: NSAttributedString?{
         didSet{
             prepareText()
@@ -42,35 +51,39 @@ class RELabel: UILabel {
         }
     }
     
-    var matchTextColor : UIColor = UIColor(red: 87/255.0, green: 196/255.0, blue: 251/255.0, alpha: 1.0){
+    var matchTextColor : UIColor = UIColor(red: 87 / 255.0, green: 196 / 255.0, blue: 251 / 255.0, alpha: 1.0){
         didSet{
             prepareText()
         }
     }
     
-    fileprivate lazy var textStorage : NSTextStorage = NSTextStorage() // NSMutableAttributeString的子类
-    fileprivate lazy var layoutManager : NSLayoutManager = NSLayoutManager()//布局管理者
-    fileprivate lazy var textContainer : NSTextContainer = NSTextContainer()//容器，需要设置容器的大小
     
-    //记录下标值
+    // 懒加载属性
+    fileprivate lazy var textStorage : NSTextStorage = NSTextStorage() // NSMutableAttributeString的子类
+    fileprivate lazy var layoutManager : NSLayoutManager = NSLayoutManager() // 布局管理者
+    fileprivate lazy var textContainer : NSTextContainer = NSTextContainer() // 容器,需要设置容器的大小
+    
+    // 用于记录下标值
     fileprivate lazy var linkRanges : [NSRange] = [NSRange]()
     fileprivate lazy var userRanges : [NSRange] = [NSRange]()
     fileprivate lazy var topicRanges : [NSRange] = [NSRange]()
     
-    //记录用户选中的range
+    // 用于记录用户选中的range
     fileprivate var selectedRange : NSRange?
     
-    //用户记录点击还是松开
+    // 用户记录点击还是松开
     fileprivate var isSelected : Bool = false
     
-    //闭包属性，用于回调
+    // 闭包属性,用于回调
     fileprivate var tapHandlerType : TapHandlerType = TapHandlerType.NoneTapHandler
     
-    public typealias RETapHandler = (RELabel, String , NSRange) -> Void
+    public typealias RETapHandler = (RELabel, String, NSRange) -> Void
     var linkTapHandler : RETapHandler?
     var userTapHandler : RETapHandler?
     var topicTapHandler : RETapHandler?
     
+    
+    // MARK:- 构造函数
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -83,67 +96,71 @@ class RELabel: UILabel {
         prepareTextSystem()
     }
     
+    // MARK:- 布局子控件
     override open func layoutSubviews() {
         super.layoutSubviews()
         
-        //设置容器的大小为Label的尺寸
+        // 设置容器的大小为Label的尺寸
         textContainer.size = frame.size
     }
     
-    //MARK:- 重写drawTextInRect方法
+    // MARK:- 重写drawTextInRect方法
     override open func drawText(in rect: CGRect) {
-        //1.绘制背景
+        // 1.绘制背景
         if selectedRange != nil {
-            //2.0确定颜色
+            // 2.0.确定颜色
             let selectedColor = isSelected ? UIColor(white: 0.7, alpha: 0.2) : UIColor.clear
             
-            //2.1设置颜色
+            // 2.1.设置颜色
             textStorage.addAttribute(NSBackgroundColorAttributeName, value: selectedColor, range: selectedRange!)
-            //2.2绘制背景
-        layoutManager.drawBackground(forGlyphRange: selectedRange!, at: CGPoint(x: 0, y: 0  ))
             
-            // 2.绘制字形
-            // 需要绘制的范围
-            let range = NSRange(location: 0, length: textStorage.length)
-            layoutManager.drawGlyphs(forGlyphRange: range, at: CGPoint.zero)
+            // 2.2.绘制背景
+            layoutManager.drawBackground(forGlyphRange: selectedRange!, at: CGPoint(x: 0, y: 0))
         }
+        
+        // 2.绘制字形
+        // 需要绘制的范围
+        let range = NSRange(location: 0, length: textStorage.length)
+        layoutManager.drawGlyphs(forGlyphRange: range, at: CGPoint.zero)
     }
+    
 }
 
+
 extension RELabel {
-    ///准备文本系统
-    fileprivate func prepareTextSystem(){
-        //0.准备文本
+    /// 准备文本系统
+    fileprivate func prepareTextSystem() {
+        // 0.准备文本
         prepareText()
-        //1.将布局添加到storeage中
+        
+        // 1.将布局添加到storeage中
         textStorage.addLayoutManager(layoutManager)
         
-        //2.将容器添加到布局中
+        // 2.将容器添加到布局中
         layoutManager.addTextContainer(textContainer)
         
-        //3.让label可以和用户交互
+        // 3.让label可以和用户交互
         isUserInteractionEnabled = true
         
-        //设置间距为0
+        // 4.设置间距为0
         textContainer.lineFragmentPadding = 0
     }
     
-    ///准备文本
+    /// 准备文本
     fileprivate func prepareText() {
-        
-        //1.准备字符串
+        // 1.准备字符串
         var attrString : NSAttributedString?
         if attributedText != nil {
             attrString = attributedText
-        }else if text != nil{
+        } else if text != nil {
             attrString = NSAttributedString(string: text!)
-        }else{
+        } else {
             attrString = NSAttributedString(string: "")
         }
         
         selectedRange = nil
         
-        //2.设置换行模型
+        // 2.设置换行模型
         let attrStringM = addLineBreak(attrString!)
         
         attrStringM.addAttribute(NSFontAttributeName, value: font, range: NSRange(location: 0, length: attrStringM.length))
@@ -308,9 +325,10 @@ extension RELabel {
         return nil
     }
 }
+
+// MARK:- 补充
 extension RELabel {
-    
-    //如果用户没有设置lineBreak，则所有内容会绘制到同一行中，一次需要主动设置
+    /// 如果用户没有设置lineBreak,则所有内容会绘制到同一行中,因此需要主动设置
     fileprivate func addLineBreak(_ attrString: NSAttributedString) -> NSMutableAttributedString {
         let attrStringM = NSMutableAttributedString(attributedString: attrString)
         
@@ -324,7 +342,7 @@ extension RELabel {
         
         if paragraphStyle != nil {
             paragraphStyle!.lineBreakMode = NSLineBreakMode.byWordWrapping
-        }else{
+        } else {
             paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle!.lineBreakMode = NSLineBreakMode.byWordWrapping
             attributes[NSParagraphStyleAttributeName] = paragraphStyle
