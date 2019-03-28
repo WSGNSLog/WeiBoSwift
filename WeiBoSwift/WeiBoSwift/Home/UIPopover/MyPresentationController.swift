@@ -11,7 +11,7 @@ import UIKit
 class MyPresentationController: UIPresentationController {
 
     var presentedFrame : CGRect = CGRect.zero
-    private lazy var coverView : UIView = UIView()
+    fileprivate lazy var coverView : UIView = UIView()
     
     override func containerViewWillLayoutSubviews() {
         super.containerViewWillLayoutSubviews()
@@ -26,7 +26,7 @@ class MyPresentationController: UIPresentationController {
 
 extension MyPresentationController{
     
-    private func setupCoverView(){
+     func setupCoverView(){
     
         containerView?.insertSubview(coverView, at: 0)
         coverView.backgroundColor = UIColor(white: 0.8, alpha: 0.2)
@@ -39,7 +39,7 @@ extension MyPresentationController{
 
 extension MyPresentationController{
     
-    @objc private func coverViewClick(){
+    @objc fileprivate func coverViewClick(){
         presentedViewController.dismiss(animated: true, completion: nil)
     }
 }

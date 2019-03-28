@@ -10,7 +10,7 @@ import UIKit
 
 class MainTabBarController: UITabBarController {
 
-    private lazy var composeBtn : UIButton = UIButton(imageName: "tabbar_compose_icon_add", bgImageName: "tabbar_compose_button")
+    fileprivate lazy var composeBtn : UIButton = UIButton(imageName: "tabbar_compose_icon_add", bgImageName: "tabbar_compose_button")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +42,7 @@ class MainTabBarController: UITabBarController {
     
 }
 extension MainTabBarController{
-    private func setupComposeBtn(){
+    fileprivate func setupComposeBtn(){
         tabBar.addSubview(composeBtn)
         
         
@@ -73,7 +73,7 @@ extension MainTabBarController{
 
 extension MainTabBarController{
     
-    @objc private func composeBtnClick(){
+    @objc fileprivate func composeBtnClick(){
     
         print("composeBtnClick")
     }

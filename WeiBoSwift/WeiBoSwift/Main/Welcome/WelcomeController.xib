@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WelcomeController" customModule="WeiBoSwift" customModuleProvider="target">
+            <connections>
+                <outlet property="iconBottomConstrant" destination="dSW-7p-9U4" id="TkT-EQ-U20"/>
+                <outlet property="iconView" destination="Bzw-yE-0tt" id="i8K-7y-Enu"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ad_background" translatesAutoresizingMaskIntoConstraints="NO" id="Bhv-Ov-wak">
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_default" translatesAutoresizingMaskIntoConstraints="NO" id="Bzw-yE-0tt">
+                    <rect key="frame" x="137.5" y="467" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="Kcm-8i-5Wj"/>
+                        <constraint firstAttribute="width" constant="100" id="NUQ-bA-gex"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="欢迎回来" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OBM-Fg-Pzi">
+                    <rect key="frame" x="153" y="587" width="69.5" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="OBM-Fg-Pzi" firstAttribute="top" secondItem="Bzw-yE-0tt" secondAttribute="bottom" constant="20" id="R5G-yQ-LUX"/>
+                <constraint firstItem="OBM-Fg-Pzi" firstAttribute="centerX" secondItem="Bzw-yE-0tt" secondAttribute="centerX" id="XsL-93-tz3"/>
+                <constraint firstAttribute="bottom" secondItem="Bzw-yE-0tt" secondAttribute="bottom" constant="100" id="dSW-7p-9U4"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Bhv-Ov-wak" secondAttribute="bottom" id="gYt-o8-N39"/>
+                <constraint firstItem="Bhv-Ov-wak" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gsw-4s-dZG"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Bhv-Ov-wak" secondAttribute="trailing" id="oGs-41-2sn"/>
+                <constraint firstItem="Bhv-Ov-wak" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="tbG-CP-7h5"/>
+                <constraint firstItem="Bzw-yE-0tt" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="zzy-te-HGH"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ad_background" width="320" height="568"/>
+        <image name="avatar_default" width="50" height="50"/>
+    </resources>
+</document>

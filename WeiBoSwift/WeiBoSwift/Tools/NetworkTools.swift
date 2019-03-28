@@ -1,0 +1,148 @@
+//
+//  NetworkTools.swift
+//  WeiBoSwift
+//
+//  Created by user on 2019/3/20.
+//  Copyright © 2019 Wu. All rights reserved.
+//
+
+import Alamofire
+
+enum RequestMethod : String {
+    case GET = "GET"
+    case POST = "POST"
+}
+
+
+class NetworkTools {
+    
+    // 自定义一个类方法
+    class func requestData(type:RequestMethod , URLString : String , parameters : [String : Any]? = nil , finishCallBack:@escaping (_ response : AnyObject) -> ()){
+        
+        // 获取类型
+        let method = type == .GET ? HTTPMethod.get : HTTPMethod.post
+        
+        Alamofire.request(URLString, method: method, parameters: parameters).responseJSON { (response) in
+            
+            
+            // 1.校验返回值
+            guard let result = response.result.value else{
+                
+                print(response.error!)
+                return
+            }
+            
+            // 2.回调正确的返回
+            finishCallBack(result as AnyObject)
+            
+        }
+    }
+    
+    
+    // get请求
+    class func getData(URLString : String , finishCallBack:@escaping (_ response : AnyObject) -> ()) {
+        
+        // 调用类方法
+        requestData(type: .GET, URLString: URLString) { (response) in
+            
+            finishCallBack(response)
+        }
+        
+    }
+    
+    
+    /// post请求
+    // MARK: - post请求
+    class func postData(URLString : String , parameters : [String : NSString]? = nil, finishCallBack:@escaping (_ response : AnyObject) -> ()) {
+        
+        requestData(type:.POST, URLString: URLString, parameters: parameters) { (response) in
+            finishCallBack(response)
+        }
+    }
+    
+}
+
+
+// MARK: - 获取AccessToken专用
+extension NetworkTools{
+    
+    class func loadAccessToken(code : String , finishCallBack: @escaping (_ result : [String : Any]? ) -> ()){
+        
+        let params = ["client_id" : app_key , "client_secret" : app_secret , "grant_type" : "authorization_code", "code" : code ,"redirect_uri" : redirect_uri]
+        
+        requestData(type: .POST, URLString: "https://api.weibo.com/oauth2/access_token", parameters: params) { (result) in
+            
+            finishCallBack(result as? [String : Any])
+        }
+    }
+}
+
+
+// MARK: - 请求用户数据
+extension NetworkTools{
+    
+    class func loadUserInfo(accessToken : String ,uid : String , finishCallBack :@escaping (_ result : Any) -> ()) {
+        
+        requestData(type: .GET, URLString: "https://api.weibo.com/2/users/show.json", parameters: ["access_token" : accessToken , "uid" : uid]) { (result) in
+            
+            finishCallBack(result)
+        }
+    }
+}
+
+
+extension NetworkTools{
+    
+    class func loadHomeData(_ since_id : Int , max_id : Int , finishCallBack:@escaping (_ result : [[String : AnyObject]]? ) -> ()){
+        
+        // 请求接口
+        print(homgDataUrl + "?access_token" + UserAccountViewModel.shareInstance.account!.access_token!)
+        
+        let accessToken = UserAccountViewModel.shareInstance.account!.access_token!
+        
+        requestData(type: .GET, URLString: homgDataUrl, parameters: ["access_token" : accessToken , "since_id" : "\(since_id)" , "max_id" : "\(max_id)"]) { (result) in
+            
+            // 简单处理，之返回微博数据
+            guard result is [String : AnyObject] else{
+                return
+            }
+            
+            // 判断请求是否出错
+            //            if (result["error_code"]) != nil{
+            //
+            //                finishCallBack(result as? [[String : AnyObject]])
+            //
+            //            }else{
+            
+            // 为出错
+            guard let statusesArray = result["statuses"] as? [[String : AnyObject]] else {
+                return
+            }
+            
+            finishCallBack(statusesArray)
+            //            }
+            
+        }
+        
+    }
+    
+    
+    
+    /// 发送文字微博
+    ///
+    /// - Parameters:
+    ///   - statusText: 微博内容
+    ///   - finishCallBack: 回调
+    class func postStatus( statusText : String , finishCallBack : @escaping (_ isSuccess : Bool) -> ()) {
+        
+        let accessToken = UserAccountViewModel.shareInstance.account?.access_token
+        let params = ["access_token" : accessToken , "status" : statusText]
+        
+        requestData(type: .POST, URLString: "https://api.weibo.com/2/statuses/update.json", parameters: params as Any as? [String : Any]) { (result) in
+            
+            Mylog(result)
+            finishCallBack(true)
+        }
+    }
+    
+}

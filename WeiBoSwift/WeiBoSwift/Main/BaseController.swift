@@ -14,6 +14,7 @@ class BaseController: UITableViewController {
     var isLogin : Bool = false
     
     override func loadView() {
+        isLogin = UserAccountViewModel.shareInstance.isLogin
         isLogin ? super.loadView() : setupVisitorView()
     }
     
@@ -41,24 +42,29 @@ class BaseController: UITableViewController {
     
 }
 extension BaseController{
-    private func setupVisitorView() {
+    func setupVisitorView() {
         
         view = visitorView
         visitorView.registerBtn.addTarget(self, action: #selector(self.registerBtnClick), for: .touchUpInside)
         visitorView.loginBtn.addTarget(self, action: #selector(self.loginBtnClick), for: .touchUpInside)
     }
     
-    private func setupNaviItems(){
+    func setupNaviItems(){
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: .plain, target: self, action: #selector(self.registerBtnClick))
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: .plain, target: self, action: #selector(self.loginBtnClick))
     }
 }
 
 extension BaseController{
-    @objc private func registerBtnClick(){
+    @objc fileprivate func registerBtnClick(){
         
     }
-    @objc private func loginBtnClick(){
+    @objc fileprivate func loginBtnClick(){
         
+        let oauthVC = OAuthViewController()
+        
+        let nav = UINavigationController(rootViewController: oauthVC)
+        
+        present(nav, animated: true, completion: nil)
     }
 }

@@ -10,6 +10,10 @@ import UIKit
 
 extension UIButton
 {
+    //类方法
+    class func creatButton () -> UIButton {
+        return UIButton()
+    }
     convenience init (imageName : String, bgImageName : String) {
         self.init()
         setBackgroundImage(UIImage(named: bgImageName), for: .normal)
@@ -18,6 +22,14 @@ extension UIButton
         setImage(UIImage(named: imageName + "_highlighted"), for: .highlighted)
         sizeToFit()
         
+    }
+    
+    convenience init(bgColor : UIColor, fontSize : CGFloat, title : String) {
+        self.init()
+        
+        backgroundColor = bgColor
+        titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
+        setTitle(title, for: .normal)
     }
 }
 
