@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		05CF944F4D5D90A48FF1FB4F /* Pods_WeiBoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 566693D0D2DE9119FD8E6BBC /* Pods_WeiBoSwift.framework */; };
+		1B067D30224E0A7B00C9F764 /* HttpTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B067D2F224E0A7B00C9F764 /* HttpTools.swift */; };
+		1B15E8D6224DE8D300EBE6A7 /* PicPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B15E8D5224DE8D300EBE6A7 /* PicPickerView.swift */; };
+		1B15E8D8224DEB8600EBE6A7 /* ComposeTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B15E8D7224DEB8600EBE6A7 /* ComposeTitleView.swift */; };
+		1B15E8DA224DED6900EBE6A7 /* ComposeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B15E8D9224DED6900EBE6A7 /* ComposeTextView.swift */; };
+		1B15E8DD224DEEB800EBE6A7 /* ComposeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B15E8DB224DEEB800EBE6A7 /* ComposeController.swift */; };
+		1B15E8DE224DEEB800EBE6A7 /* ComposeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B15E8DC224DEEB800EBE6A7 /* ComposeController.xib */; };
 		1B18D08C2241E266002F56F6 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B18D08B2241E266002F56F6 /* Common.swift */; };
 		1B18D08E2241E2CF002F56F6 /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B18D08D2241E2CF002F56F6 /* NetworkTools.swift */; };
 		1B18D09022422D30002F56F6 /* PicCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B18D08F22422D30002F56F6 /* PicCollectionView.swift */; };
@@ -26,6 +32,8 @@
 		1B5C8CA6222EC42B0042F017 /* MessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5C8CA5222EC42B0042F017 /* MessageController.swift */; };
 		1B5C8CA8222EC4370042F017 /* DiscorverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5C8CA7222EC4370042F017 /* DiscorverController.swift */; };
 		1B5C8CAA222EC4420042F017 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5C8CA9222EC4420042F017 /* ProfileController.swift */; };
+		1B6811A7224CC16300E168A0 /* PicPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6811A5224CC16300E168A0 /* PicPickerCell.swift */; };
+		1B6811A8224CC16300E168A0 /* PicPickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B6811A6224CC16300E168A0 /* PicPickerCell.xib */; };
 		1B7476972243B1E8008C78AC /* RELabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7476962243B1E8008C78AC /* RELabel.swift */; };
 		1B92CDAD22355F68005B438F /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B92CDAC22355F68005B438F /* UIBarButtonItem-Extension.swift */; };
 		1B92CDAF22356050005B438F /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B92CDAE22356050005B438F /* TitleButton.swift */; };
@@ -64,6 +72,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B067D2F224E0A7B00C9F764 /* HttpTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpTools.swift; sourceTree = "<group>"; };
+		1B15E8D5224DE8D300EBE6A7 /* PicPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicPickerView.swift; sourceTree = "<group>"; };
+		1B15E8D7224DEB8600EBE6A7 /* ComposeTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeTitleView.swift; sourceTree = "<group>"; };
+		1B15E8D9224DED6900EBE6A7 /* ComposeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeTextView.swift; sourceTree = "<group>"; };
+		1B15E8DB224DEEB800EBE6A7 /* ComposeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeController.swift; sourceTree = "<group>"; };
+		1B15E8DC224DEEB800EBE6A7 /* ComposeController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComposeController.xib; sourceTree = "<group>"; };
 		1B18D08B2241E266002F56F6 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		1B18D08D2241E2CF002F56F6 /* NetworkTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
 		1B18D08F22422D30002F56F6 /* PicCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicCollectionView.swift; sourceTree = "<group>"; };
@@ -84,6 +98,8 @@
 		1B5C8CA5222EC42B0042F017 /* MessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageController.swift; sourceTree = "<group>"; };
 		1B5C8CA7222EC4370042F017 /* DiscorverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscorverController.swift; sourceTree = "<group>"; };
 		1B5C8CA9222EC4420042F017 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		1B6811A5224CC16300E168A0 /* PicPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicPickerCell.swift; sourceTree = "<group>"; };
+		1B6811A6224CC16300E168A0 /* PicPickerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PicPickerCell.xib; sourceTree = "<group>"; };
 		1B7476962243B1E8008C78AC /* RELabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RELabel.swift; sourceTree = "<group>"; };
 		1B92CDAC22355F68005B438F /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
 		1B92CDAE22356050005B438F /* TitleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
@@ -144,6 +160,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		1B067D2E224E0A5500C9F764 /* HttpTool */ = {
+			isa = PBXGroup;
+			children = (
+				1B18D08D2241E2CF002F56F6 /* NetworkTools.swift */,
+				1B067D2F224E0A7B00C9F764 /* HttpTools.swift */,
+			);
+			path = HttpTool;
+			sourceTree = "<group>";
+		};
 		1B438A07224885E4006B1F75 /* PhotoBrowser */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +201,7 @@
 		1B5C8C89222EAAB60042F017 /* WeiBoSwift */ = {
 			isa = PBXGroup;
 			children = (
+				1B6811A3224CC11900E168A0 /* Compose */,
 				1B93844D223349E5000FDA4F /* Tools */,
 				1B5C8CA2222EC20C0042F017 /* Profile */,
 				1B5C8CA1222EC1FC0042F017 /* Discorver */,
@@ -245,6 +271,28 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		1B6811A3224CC11900E168A0 /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				1B6811A4224CC12900E168A0 /* PicPicker */,
+				1B15E8D7224DEB8600EBE6A7 /* ComposeTitleView.swift */,
+				1B15E8D9224DED6900EBE6A7 /* ComposeTextView.swift */,
+				1B15E8DB224DEEB800EBE6A7 /* ComposeController.swift */,
+				1B15E8DC224DEEB800EBE6A7 /* ComposeController.xib */,
+			);
+			path = Compose;
+			sourceTree = "<group>";
+		};
+		1B6811A4224CC12900E168A0 /* PicPicker */ = {
+			isa = PBXGroup;
+			children = (
+				1B6811A5224CC16300E168A0 /* PicPickerCell.swift */,
+				1B6811A6224CC16300E168A0 /* PicPickerCell.xib */,
+				1B15E8D5224DE8D300EBE6A7 /* PicPickerView.swift */,
+			);
+			path = PicPicker;
+			sourceTree = "<group>";
+		};
 		1B7476952243B1C7008C78AC /* RegexLabel */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,13 +324,13 @@
 		1B93844D223349E5000FDA4F /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				1B067D2E224E0A5500C9F764 /* HttpTool */,
 				1BFA062C224A22AF00999F5F /* Emotion */,
 				1B7476952243B1C7008C78AC /* RegexLabel */,
 				1BF49DEE224269A6009C22FA /* Public */,
 				1B92CDAE22356050005B438F /* TitleButton.swift */,
 				1B93844E223349FC000FDA4F /* Category */,
 				1B18D08B2241E266002F56F6 /* Common.swift */,
-				1B18D08D2241E2CF002F56F6 /* NetworkTools.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -435,7 +483,9 @@
 				1B5C8C95222EAAB70042F017 /* LaunchScreen.storyboard in Resources */,
 				1B5C8C92222EAAB70042F017 /* Assets.xcassets in Resources */,
 				1B1BFBC222301E4D0074C61E /* Message.storyboard in Resources */,
+				1B15E8DE224DEEB800EBE6A7 /* ComposeController.xib in Resources */,
 				1BF49DF922432D59009C22FA /* OAuthViewController.xib in Resources */,
+				1B6811A8224CC16300E168A0 /* PicPickerCell.xib in Resources */,
 				1B5C8C90222EAAB60042F017 /* Main.storyboard in Resources */,
 				1BFA0639224B059800999F5F /* Emoticons.bundle in Resources */,
 				1B1BFBC722301E780074C61E /* Profile.storyboard in Resources */,
@@ -520,6 +570,8 @@
 				1BFA0637224B02CC00999F5F /* EmotionPackage.swift in Sources */,
 				1B92CDAD22355F68005B438F /* UIBarButtonItem-Extension.swift in Sources */,
 				1B92CDB3223562F0005B438F /* PopoverController.swift in Sources */,
+				1B15E8D8224DEB8600EBE6A7 /* ComposeTitleView.swift in Sources */,
+				1B15E8DD224DEEB800EBE6A7 /* ComposeController.swift in Sources */,
 				1BF49DF0224269B8009C22FA /* URL.swift in Sources */,
 				1B5C8CAA222EC4420042F017 /* ProfileController.swift in Sources */,
 				1B93845022334A32000FDA4F /* UIButton-Extension.swift in Sources */,
@@ -531,8 +583,11 @@
 				1B5C8CA4222EC2DE0042F017 /* HomeController.swift in Sources */,
 				1B438A09224886FE006B1F75 /* PhotoBrowserController.swift in Sources */,
 				1BF49E0022437B9D009C22FA /* HomeViewCell.swift in Sources */,
+				1B15E8D6224DE8D300EBE6A7 /* PicPickerView.swift in Sources */,
 				1BF49DF522432D4E009C22FA /* UserAccount.swift in Sources */,
+				1B15E8DA224DED6900EBE6A7 /* ComposeTextView.swift in Sources */,
 				1B92CDAF22356050005B438F /* TitleButton.swift in Sources */,
+				1B6811A7224CC16300E168A0 /* PicPickerCell.swift in Sources */,
 				1B93844822333D5A000FDA4F /* BaseController.swift in Sources */,
 				1BFA0635224B029000999F5F /* EmotionManager.swift in Sources */,
 				1B5C8CA6222EC42B0042F017 /* MessageController.swift in Sources */,
@@ -540,6 +595,7 @@
 				1B92CDBA22376595005B438F /* PopoverAnimator.swift in Sources */,
 				1BFA063F224B0EDF00999F5F /* EmotionViewCell.swift in Sources */,
 				1BF49DF822432D59009C22FA /* OAuthViewController.swift in Sources */,
+				1B067D30224E0A7B00C9F764 /* HttpTools.swift in Sources */,
 				1B5C8CA8222EC4370042F017 /* DiscorverController.swift in Sources */,
 				1B5C8C8B222EAAB60042F017 /* AppDelegate.swift in Sources */,
 				1BFA063B224B07BB00999F5F /* UITextView+Extension.swift in Sources */,
